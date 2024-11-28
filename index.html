@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<script src="script.js"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .extended-content {
+            display: none;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3e3b32;
+            color: #f1e1c6;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #c19a6b;
+        }
+
+        .intro-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #f8f5e6;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .intro-section h1 {
+            color: #3e3b32;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .intro-section p {
+            color: #5a5648;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .artifact-content {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .artifact-text {
+            flex: 0 0 60%;
+        }
+
+        .artifact-space {
+            flex: 0 0 40%;
+        }
+    </style>
+</head>
+
+<nav class="sticky-nav">
+    <ul class="nav-links">
+        <li><a href="#FranklinRoosevelt">Franklin Roosevelt</a></li>
+        <li><a href="#GeorgeWashington">George Washington</a></li>
+        <li><a href="#AbrahamLincoln">Abraham Lincoln</a></li>
+    </ul>
+</nav>
+
+<body>
+    <div class="hero-container">
+        <img src="images/HERRO-Camera.png" alt="Hero Image" class="hero-image"
+            style="width: 100%; height: auto; max-width: 100%;">
+    </div>
+
+    <div class="intro-section">
+        <h1>Presidential Artifacts Collection</h1>
+        <p>Welcome to our virtual museum showcasing the remarkable legacies of three influential American presidents. Through this interactive exhibition, explore the personal artifacts, historical documents, and compelling stories of Franklin Roosevelt, George Washington, and Abraham Lincoln. Each artifact tells a unique story of leadership, courage, and the pivotal moments that shaped our nation's history.</p>
+    </div>
+
+    <div class="artifacts-container">
+        <section id="FranklinRoosevelt" class="artifact-section">
+            <div class="artifact-content">
+                <div class="artifact-text">
+                    <h2>Franklin Roosevelt</h2>
+                    <p>Franklin Roosevelt, the 32nd President of the United States, is remembered for leading the
+                        country through the Great Depression and World War II. His leadership and the New Deal reforms
+                        significantly reshaped American society.</p>
+                    <button class="read-more" onclick="toggleContent(this)">Read more</button>
+                    <p class="extended-content">During his presidency, Roosevelt implemented numerous groundbreaking
+                        programs including Social Security, the Works Progress Administration, and the Tennessee Valley
+                        Authority. His famous "fireside chats" helped restore public confidence during difficult times.
+                        Despite being paralyzed from polio, he served an unprecedented four terms as president, guiding
+                        America through some of its most challenging years. His leadership during World War II was
+                        crucial in forming the Allied Powers and ultimately achieving victory.</p>
+                </div>
+                <div class="artifact-space"></div>
+            </div>
+            <div class="artifact-images">
+                <img src="images/FRAN1-Camera.png" alt="Franklin Roosevelt portrait">
+                <img src="images/FRANK2-Camera.png" alt="Franklin Roosevelt statue side view">
+                <img src="images/FRANK3-Camera.png" alt="Franklin Roosevelt historical artifact">
+            </div>
+        </section>
+
+        <section id="GeorgeWashington" class="artifact-section">
+            <div class="artifact-content">
+                <div class="artifact-text">
+                    <h2>George Washington</h2>
+                    <p>George Washington, the first President of the United States, is revered for his leadership during
+                        the American Revolution and his role in shaping the nation's early government. He is known as
+                        the "Father of the Nation."</p>
+                    <button class="read-more" onclick="toggleContent(this)">Read more</button>
+                    <p class="extended-content">As Commander of the Continental Army, Washington led American forces to
+                        victory in the Revolutionary War. He presided over the Constitutional Convention and established
+                        many of the customs and traditions that define the American presidency today. Washington set a
+                        precedent by stepping down after two terms, demonstrating his commitment to democratic
+                        principles. His farewell address warned against excessive political party spirit and entangling
+                        foreign alliances, advice that remains relevant today.</p>
+                </div>
+                <div class="artifact-space"></div>
+            </div>
+            <div class="artifact-images">
+                <img src="images/WASHIN1-Camera.png" alt="George Washington portrait">
+                <img src="images/WASHING2-Camera.png" alt="George Washington statue side view">
+                <img src="images/WASHING 3-Camera.png" alt="George Washington historical artifact">
+            </div>
+        </section>
+
+        <section id="AbrahamLincoln" class="artifact-section">
+            <div class="artifact-content">
+                <div class="artifact-text">
+                    <h2>Abraham Lincoln</h2>
+                    <p>Abraham Lincoln, the 16th President of the United States, is best known for his leadership during
+                        the Civil War and his role in the abolition of slavery with the Emancipation Proclamation.</p>
+                    <button class="read-more" onclick="toggleContent(this)">Read more</button>
+                    <p class="extended-content">Lincoln's presidency was defined by his steadfast leadership during the
+                        American Civil War and his commitment to preserving the Union. His Gettysburg Address became one
+                        of the most famous speeches in American history, emphasizing democracy and equality. Beyond his
+                        role in abolishing slavery, Lincoln modernized the economy with a national banking system,
+                        protective tariffs, and railroad development. His assassination in 1865, just days after the
+                        Civil War's end, made him a martyr for the causes of national unity and racial justice.</p>
+                </div>
+                <div class="artifact-space"></div>
+            </div>
+            <div class="artifact-images">
+                <img src="images/PRIME1-Camera.png" alt="Abraham Lincoln portrait">
+                <img src="images/PRIME2-Camera.png" alt="Abraham Lincoln statue side view">
+                <img src="images/PRIME3-Camera.png" alt="Abraham Lincoln historical artifact">
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .site-footer {
+            width: 100%;
+            background-color: #2c3e50;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 3px solid #34495e;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .footer-links a:hover {
+            color: #3498db;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            .site-footer {
+                padding: 1.5rem 0;
+            }
+        }
+    </style>
+
+    <script>
+        function toggleContent(button) {
+            const extendedContent = button.nextElementSibling;
+            if (extendedContent.style.display === "none" || extendedContent.style.display === "") {
+                extendedContent.style.display = "block";
+                button.textContent = "Read less";
+            } else {
+                extendedContent.style.display = "none";
+                button.textContent = "Read more";
+            }
+        }
+    </script>
+
+    <footer class="site-footer">
+        <ul class="footer-links">
+            <li><a href="#FranklinRoosevelt">Franklin Roosevelt</a></li>
+            <li><a href="#GeorgeWashington">George Washington</a></li>
+            <li><a href="#AbrahamLincoln">Abraham Lincoln</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
