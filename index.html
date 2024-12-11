@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Website</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
         .extended-content {
@@ -64,6 +65,89 @@
 
         .artifact-space {
             flex: 0 0 40%;
+            height: 400px;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: #f8f5e6;
+            border-radius: 8px;
+            --poster-color: transparent;
+        }
+
+        .Hotspot {
+            background: #fff;
+            border-radius: 32px;
+            border: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            box-sizing: border-box;
+            cursor: pointer;
+            height: 24px;
+            padding: 8px;
+            position: relative;
+            transition: opacity 0.3s;
+            width: 24px;
+        }
+
+        .HotspotAnnotation {
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            color: rgba(0, 0, 0, 0.8);
+            display: block;
+            font-family: Futura, Helvetica Neue, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            left: calc(100% + 1em);
+            max-width: 128px;
+            padding: 0.5em 1em;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: max-content;
+        }
+
+        .model-bounce {
+            animation: modelBounce 0.5s ease;
+        }
+
+        @keyframes modelBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .model-zoom {
+            animation: modelZoom 1s ease;
+        }
+
+        @keyframes modelZoom {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+
+        .model-popup {
+            animation: modelPopup 0.5s ease;
+        }
+
+        @keyframes modelPopup {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -103,7 +187,28 @@
                         America through some of its most challenging years. His leadership during World War II was
                         crucial in forming the Allied Powers and ultimately achieving victory.</p>
                 </div>
-                <div class="artifact-space"></div>
+                <div class="artifact-space">
+                    <model-viewer 
+                        id="roosevelt-model"
+                        src="franklin_d._roosevelt_monument.glb"
+                        alt="3D model of Franklin Roosevelt Monument"
+                        ar
+                        auto-rotate
+                        camera-controls>
+                        <button class="Hotspot" slot="hotspot-1" 
+                            data-position="-1.3791785045601705m 0.4287143849298356m -3.0894199746958364m" 
+                            data-normal="0.2976021425678923m 0.05372364856702025m 0.9531771788726624m" 
+                            data-visibility-attribute="visible"
+                            onclick="bounceModel()">
+                            <div class="HotspotAnnotation">Face</div>
+                        </button>
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                        </button>
+                    </model-viewer>
+                </div>
             </div>
             <div class="artifact-images">
                 <img src="images/FRAN1-Camera.png" alt="Franklin Roosevelt portrait">
@@ -126,6 +231,27 @@
                         precedent by stepping down after two terms, demonstrating his commitment to democratic
                         principles. His farewell address warned against excessive political party spirit and entangling
                         foreign alliances, advice that remains relevant today.</p>
+                </div>
+                <div class="artifact-space">
+                    <model-viewer 
+                        id="washington-model"
+                        src="gw_bust-150k-4096.glb"
+                        alt="3D model of George Washington Monument"
+                        ar
+                        auto-rotate
+                        camera-controls><button class="Hotspot" slot="hotspot-1" 
+                            data-position="52.184482149540145m 425.69070308861404m -97.50957745091642m" 
+                            data-normal="0.34840904393288585m 0.25677198751250113m -0.9014872625470938m" 
+                            data-visibility-attribute="visible"
+                            onclick="zoomModel()">
+                            <div class="HotspotAnnotation">Head</div>
+                        </button>
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                        </button>
+                    </model-viewer>
                 </div>
                 <div class="artifact-space"></div>
             </div>
@@ -150,7 +276,29 @@
                         protective tariffs, and railroad development. His assassination in 1865, just days after the
                         Civil War's end, made him a martyr for the causes of national unity and racial justice.</p>
                 </div>
-                <div class="artifact-space"></div>
+                <div class="artifact-space">
+                    <model-viewer 
+                        id="lincoln-model"
+                        src="abraham_lincoln_bust.glb"
+                        alt="3D model of Abraham Lincoln Monument"
+                        ar
+                        auto-rotate
+                        camera-controls> 
+                        <button class="Hotspot" slot="hotspot-1" 
+                            data-position="10.041487984932589m -25.04260925604695m 8.712675540534082m" 
+                            data-normal="0.34255136309931405m 0.00908227659417893m 0.9394552016411792m" 
+                            data-visibility-attribute="visible"
+                            onclick="popupModel()">
+                            <div class="HotspotAnnotation">Eye</div>
+                        </button>
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                    </model-viewer>
+                </div>
             </div>
             <div class="artifact-images">
                 <img src="images/PRIME1-Camera.png" alt="Abraham Lincoln portrait">
@@ -218,6 +366,30 @@
                 extendedContent.style.display = "none";
                 button.textContent = "Read more";
             }
+        }
+
+        function bounceModel() {
+            const model = document.getElementById('roosevelt-model');
+            model.classList.add('model-bounce');
+            setTimeout(() => {
+                model.classList.remove('model-bounce');
+            }, 500);
+        }
+
+        function zoomModel() {
+            const model = document.getElementById('washington-model');
+            model.classList.add('model-zoom');
+            setTimeout(() => {
+                model.classList.remove('model-zoom');
+            }, 1000);
+        }
+
+        function popupModel() {
+            const model = document.getElementById('lincoln-model');
+            model.classList.add('model-popup');
+            setTimeout(() => {
+                model.classList.remove('model-popup');
+            }, 500);
         }
     </script>
 
